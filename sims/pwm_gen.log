@@ -1,22 +1,75 @@
 Circuit: * C:\Kicad\ClassD_3.0\sims\pwm_gen.asc
 
-Direct Newton iteration for .op point succeeded.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+Gmin = 1.76685e-07
+Gmin = 1.89714e-08
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 1.21417e-08
+vernier = 0.00390625
+vernier = 0.00195312
+vernier = 0.000976562
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
 
-Date: Fri Aug 21 12:27:59 2026
-Total elapsed time: 0.376 seconds.
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+vernier = 0.25
+Source Step = 0.0177557%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+vernier = 0.25
+Source stepping failed
+
+Pseudo Transient failed in finding the operating point at 1.1412 ms.
+Trouble finding operating point....skipping operating point for Transient analysis.
+Heightened Def Con from 2.39081e-05 +to 2.39111e-05
+Heightened Def Con from 3.02251e-05 +to 3.02281e-05
+Heightened Def Con from 4.07789e-05 +to 4.07829e-05
+Heightened Def Con from 7.14684e-05 to 7.14684e-05
+Heightened Def Con from 7.36211e-05 to 7.36221e-05
+Heightened Def Con from 8.74376e-05 +to 8.74416e-05
+Heightened Def Con from 0.000115391 to 0.000115391
+Heightened Def Con from 0.000119192 to 0.000119196
+Heightened Def Con from 0.000132856 +to 0.000132858
+Heightened Def Con from 0.000153973 to 0.000153973
+Heightened Def Con from 0.000168194 to 0.000168199
+Heightened Def Con from 0.000182717 +to 0.000182722
+
+voutmax: MAX(v(triwave))=2.2765 FROM 0 TO 0.000200006
+voutmin: MIN(v(triwave))=0.0241677 FROM 0 TO 0.000200006
+
+
+Date: Fri Aug 21 14:32:08 2026
+Total elapsed time: 2.902 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 10564
-traniter = 10561
-tranpoints = 3294
-accept = 2642
-rejected = 652
-matrix size = 15
-fillins = 15
+totiter = 406660
+traniter = 60372
+tranpoints = 15385
+accept = 10942
+rejected = 12159
+matrix size = 31
+fillins = 32
 solver = Normal
-Avg thread counts: 1.6/2.8/2.9/1.6
-Matrix Compiler1: 1.27 KB object code size  0.9/0.5/[0.5]
-Matrix Compiler2: 1.55 KB object code size  0.5/0.7/[0.4]
+Avg thread counts: 1.1/1.4/1.4/1.1
+Matrix Compiler1:     153 opcodes  0.7/[0.4]/0.4
+Matrix Compiler2: 3.18 KB object code size  0.9/1.0/[0.6]
 

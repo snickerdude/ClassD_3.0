@@ -1,21 +1,37 @@
 * C:\Kicad\ClassD_3.0\sims\pwm_gen.asc
-XU1 N004 Vref Vdd 0 N003 level3a Avol=1Meg GBW=10Meg Slew=150Meg Ilimit=25m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+XComp1 N004 Vref Vdd 0 N003 level3a Avol=10Meg GBW=10Meg Slew=500Meg Ilimit=50m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
 XU2 Vref N001 Vdd 0 N002 level3a Avol=1Meg GBW=10Meg Slew=150Meg Ilimit=25m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
 XU3 N002 Triwave Vdd 0 Triwave level3a Avol=1Meg GBW=10Meg Slew=10Meg Ilimit=25m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
-Vdd Vdd 0 3.3
+Vdd Vdd 0 {Vin}
 Vref Vref 0 {Vin/2}
 R2 N003 N004 {R2}
 R1 N002 N004 {R1}
 Rt N003 N001 {Rt}
 C1 N002 N001 {C1}
+V1 AudioIn 0 SINE(1.65 0.5 15k 0)
+D2 clipiL clipped BAT54
+R3 vdd N005 {Rtopbot}
+R4 N005 N006 {Rmid}
+R5 N006 0 {Rtopbot}
+R6 clipped AudioIn 10k
+D1 clipped clipH BAT54
+XU1 N005 clipH Vdd 0 clipH level3a Avol=1Meg GBW=10Meg Slew=10Meg Ilimit=25m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+XU4 N006 clipiL Vdd 0 clipiL level3a Avol=1Meg GBW=10Meg Slew=10Meg Ilimit=25m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+XComp2 clipped Triwave Vdd 0 PWM level3a Avol=10Meg GBW=500Meg Slew=50Meg Ilimit=50m Rail=0 Vos=0 Phimargin=45 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+.model D D
+.lib C:\Users\snick\AppData\Local\LTspice\lib\cmp\standard.dio
 .param Vin 3.3
 .param freq 350k
 .param Vpp 1
 .param R2 330k
 .param R1 {R2/Vin}
 .param C1 2000p
-.param Rt 4125
+.param Rt 1178
 .tran 200u
+.meas Voutmax MAX(V(triwave))
+.meas Voutmin MIN(V(triwave))
+.param rmid 10k
+.param Rtopbot 22.5k
 .lib UniversalOpAmp3a.lib
 .backanno
 .end
